@@ -1,6 +1,9 @@
 const path = require("path")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
+const getPath = (url) => path.resolve(__dirname, url)
+const DIST_PATH = getPath('dist')
 module.exports = {
   mode: 'development',
   entry: {
@@ -8,15 +11,15 @@ module.exports = {
   },
   output: {
     filename: '[name].[hash:5].js',
-    path: path.resolve(__dirname, 'dist')
+    path: DIST_PATH
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: DIST_PATH,
     port: 8082
   },
   resolve: {
     alias: {
-      components: path.resolve(__dirname, 'src/components/')
+      components: getPath('src/components/')
     },
     extensions: ['.js', '.jsx']
   },
