@@ -7,7 +7,7 @@ const DIST_PATH = getPath('dist')
 module.exports = {
   mode: 'development',
   entry: {
-    index: './src/index.jsx'
+    index: './src/index.tsx'
   },
   output: {
     filename: '[name].[hash:5].js',
@@ -21,8 +21,9 @@ module.exports = {
     alias: {
       components: getPath('src/components/')
     },
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -41,11 +42,17 @@ module.exports = {
           }
         ],
         exclude: /node_modules/
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'Ts React',
       template: './public/index.html'
     }),
     new CleanWebpackPlugin()
