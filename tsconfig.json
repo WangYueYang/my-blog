@@ -7,9 +7,19 @@
     "jsx": "react",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "strict": false
+    "strict": false,
+    "baseUrl": "./",
+    "paths": {
+      "components/*": ["src/components/*"],
+      "pages/*": ["src/pages/*"],
+      "server/*": ["src/server/*"],
+      "assets/*": ["src/assets/*"],
+    },
   },
   "include": [
     "src/**/*"
   ],
+  "rules": {
+    "no-implicit-dependencies": ["optional", ["src"]]
+  }
 }

@@ -20,9 +20,9 @@ module.exports = {
   resolve: {
     alias: {
       components: getPath('src/components/'),
-      pages: getPath('src/pages/'),
-      server: getPath('src/server/'),
-      assets: getPath('src/assets/')
+      pages: getPath('src/pages'),
+      server: getPath('src/server'),
+      assets: getPath('src/assets')
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
@@ -30,7 +30,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|jpeg|gif)$/,
+        test: /\.(png|jpg|jpeg|gif|ttf)$/,
         use: [
           {
             loader: 'file-loader'
@@ -50,6 +50,10 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         use: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.(css|less)$/,
+        use: ['style-loader', 'css-loader', 'less-loader']
       }
     ]
   },
