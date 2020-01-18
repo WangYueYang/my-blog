@@ -15,25 +15,30 @@ module.exports = {
   },
   devServer: {
     contentBase: DIST_PATH,
-    port: 8082
+    port: 8082,
+    historyApiFallback: true, //解决： React-Router 刷新后报错 or Cannot GET /detail
   },
   resolve: {
     alias: {
-      components: getPath('src/components/'),
+      components: getPath('src/components'),
       pages: getPath('src/pages'),
       server: getPath('src/server'),
       assets: getPath('src/assets')
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
-  devtool: 'source-map',
+  devtool: 'none',
   module: {
     rules: [
       {
         test: /\.(png|jpg|jpeg|gif|ttf)$/,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash:5].[ext]',
+              outputPath: 'assets'
+            }
           }
         ]
       },

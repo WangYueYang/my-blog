@@ -8,23 +8,20 @@ interface IState {
 }
 
 class Home extends React.Component<{}, IState> {
-  public state = {
-
-  }
 
   render() {
     return (
       <div className="home">
         <div className="hero">
           <div className="left">
-            <img src="../../assets/img/wyy.jpg" alt="" className="home-logo"/>
+            <img src="../src/assets/img/wyy.jpg" alt="" className="home-logo"/>
           </div>
           <div className="right">
             <h1>
               王越洋 <span>的</span> <br/> JavaScript 博客
             </h1>
             <p>
-              <Link to="" className="my-introduce">自 我 介 绍</Link>
+              <Link to="/myself" className="my-introduce">自 我 介 绍</Link>
               <a href="https://github.com/WangYueYang" className="git-hub">GITHUB</a>
             </p>
           </div>
