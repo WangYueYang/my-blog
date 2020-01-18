@@ -20,12 +20,12 @@ module.exports = {
   },
   resolve: {
     alias: {
-      components: getPath('src/components'),
+      components: getPath('src/components/'),
       pages: getPath('src/pages'),
       server: getPath('src/server'),
-      assets: getPath('src/assets')
+      assets: getPath('src/assets/')
     },
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   devtool: 'none',
   module: {

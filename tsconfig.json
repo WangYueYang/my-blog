@@ -8,16 +8,18 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "strict": false,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "components/*": ["src/components/*"],
-      "pages/*": ["src/pages/*"],
-      "server/*": ["src/server/*"],
-      "assets/*": ["src/assets/*"],
+      "components/*": ["./src/components/*"],
+      "pages/*": ["./src/pages/*"],
+      "server/*": ["./src/server/*"],
+      "assets/*": ["./src/assets/*"],
     },
+    "moduleResolution": "node",
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*",
+    "./images.d.ts"
   ],
   "rules": {
     "no-implicit-dependencies": ["optional", ["src"]]

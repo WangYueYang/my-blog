@@ -13,7 +13,7 @@ class Home extends React.Component<{}, IState> {
   render() {
     return (
       <div className="home">
-        <div className="hero">
+        <div className="hero clearfix">
           <div className="left">
             <img src={bg} alt="" className="home-logo"/>
           </div>
