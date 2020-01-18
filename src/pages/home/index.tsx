@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import bg from "assets/img/wyy.jpg";
 import './index.less'
 
 interface IState {
@@ -14,7 +15,7 @@ class Home extends React.Component<{}, IState> {
       <div className="home">
         <div className="hero">
           <div className="left">
-            <img src="../src/assets/img/wyy.jpg" alt="" className="home-logo"/>
+            <img src={bg} alt="" className="home-logo"/>
           </div>
           <div className="right">
             <h1>

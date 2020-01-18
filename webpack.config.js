@@ -31,11 +31,24 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|jpeg|gif|ttf)$/,
+        test: /\.ttf$/,
         use: [
           {
             loader: 'file-loader',
             options: {
+              name: '[name].[hash:5].[ext]',
+              outputPath: 'assets'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8000,
               name: '[name].[hash:5].[ext]',
               outputPath: 'assets'
             }
