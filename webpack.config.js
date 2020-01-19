@@ -26,7 +26,7 @@ module.exports = {
       server: getPath('src/server'),
       assets: getPath('src/assets/')
     },
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.less', '.json'],
   },
   devtool: 'none',
   module: {
