@@ -11,7 +11,8 @@ module.exports = {
   },
   output: {
     filename: '[name].[hash:5].js',
-    path: DIST_PATH
+    path: DIST_PATH,
+    publicPath: '/',  //解决静态资源404问题
   },
   devServer: {
     contentBase: DIST_PATH,
