@@ -5,9 +5,9 @@ import Hello from './md/Hello.md'
 class Markdown extends Component {
   render() {
     return (
-      <div>
-        markdown
-      </div>
+      <>
+        <div dangerouslySetInnerHTML={{__html: Hello}} />
+      </>
     );
   }
 }

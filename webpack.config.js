@@ -73,6 +73,10 @@ module.exports = {
       {
         test: /\.(css|less)$/,
         use: ['style-loader', 'css-loader', 'less-loader']
+      }, 
+      {
+        test: /\.md$/,
+        use: ['html-loader', 'markdown-loader']
       }
     ]
   },
