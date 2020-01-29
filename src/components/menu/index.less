@@ -1,20 +1,32 @@
 @import '~assets/css/globel.less';
 
 .menu {
-  height: 500px;
+  height: calc(100vh - 194px);
+  width: 300px;
+  position: fixed;
+  top: 60px;
+
 
   .menu-wrapper {
-    width: 300px;
-    padding: 35px 0 60px 20px;
+    padding-left: 20px;
     box-sizing: border-box;
     height: 100%;
-    float: left;
+    color: #333;
+    overflow-y: scroll;
 
     .menu-title {
       font-weight: bold;
-      font-size: 18px;
+      font-size: 20px;
       color: @blackTitle;
       margin: 20px 0;
+    }
+
+    .sub-menu-title {
+      font-size: 18px;
+    }
+
+    .menu-link {
+      color: #666;
     }
 
     .menu-content {
