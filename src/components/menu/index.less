@@ -5,7 +5,10 @@
   width: 300px;
   position: fixed;
   top: 60px;
-
+  background: #fff;
+  box-shadow: 0 0 1px #d9dadc;
+  padding-bottom: 60px;
+  box-sizing: border-box;
 
   .menu-wrapper {
     padding-left: 20px;
@@ -21,17 +24,14 @@
       margin: 20px 0;
     }
 
-    .sub-menu-title {
-      font-size: 18px;
-    }
-
     .menu-link {
-      color: #666;
-    }
+      display: block;
+      padding: 10px 0 10px 10px;
 
-    .menu-content {
-      margin-top: 8px;
-
+      &.active {
+        background: @bgBlue;
+        color: #fff;
+      }
     }
   }
 

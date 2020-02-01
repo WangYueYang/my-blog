@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './index.less'
 
 
 interface IProps {
-  menuList: { title: string, path: string }[],
+  menuList: Array<{
+    title: string,
+    titlePath: string,
+    list: { text: string, path: string }[]
+  }>,
   match?: {
     path: string
   }
@@ -44,24 +48,31 @@ class Menu extends Component<IProps, {}> {
 
   render() {
     const { props } = this
-    const fistMenu = props.menuList[0]
-    
+
     return (
       <div className="menu">
-        <ul className="menu-wrapper">
-          <li className="menu-title">
-            <Link to={`${fistMenu.path}`}>{fistMenu.title}</Link>
-          </li>
+        <div className="menu-wrapper">
           {
-            props.menuList.map(item => {
-              return (
-                <li key={item.title}>
-                  <Link to={`${props.match.path}${item.path}`}>{item.title}</Link>
-                </li>
-              )
-            }).slice(1)
+            props.menuList.map(e => (
+              <div key={e.title}>
+                <h2 className="menu-title">
+                  <NavLink to={e.titlePath}>{e.title}</NavLink>
+                </h2>
+                {
+                  e.list.map(item => (
+                    <NavLink
+                      key={item.text}
+                      to={props.match.path + item.path}
+                      className="menu-link"
+                    >
+                      {item.text}
+                    </NavLink>
+                  ))
+                }
+              </div>
+            ))
           }
-        </ul>
+        </div>
       </div>
     );
   }
